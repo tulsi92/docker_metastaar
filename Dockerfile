@@ -14,17 +14,17 @@ RUN apt-get update && \
     libxml2-dev
 
 ## Install remotes to install packages from GitHub-devtools?
-# RUN R -e "install.packages('remotes', repos = 'http://cran.rstudio.com')"
-# Install devtools
-RUN R -e "install.packages('devtools', repos = 'http://cran.rstudio.com')"
+RUN R -e "install.packages('remotes', repos = 'http://cran.rstudio.com')"
+## Install devtools
+# RUN R -e "install.packages('devtools', repos = 'http://cran.rstudio.com')"
 
 ## Install specific R packages from GitHub-devtools?
-RUN R -e "devtools::install_github('xihaoli/STAAR',ref="main")"
-RUN R -e "devtools::install_github('xihaoli/STAARpipeline',ref="main")"
-RUN R -e "devtools::install_github('xihaoli/STAARpipelineSummary',ref="main")"
-RUN R -e "devtools::install_github('xihaoli/MultiSTAAR',ref="main")"
-RUN R -e "devtools::install_github('xihaoli/MetaSTAAR',ref="main")"
-RUN R -e "devtools::install_github('li-lab-genetics/MetaSTAARlite',ref="main")"
+RUN R -e "remotes::install_github('xihaoli/STAAR')"
+RUN R -e "remotes::install_github('xihaoli/STAARpipeline')"
+RUN R -e "remotes::install_github('xihaoli/STAARpipelineSummary')"
+RUN R -e "remotes::install_github('xihaoli/MultiSTAAR')"
+RUN R -e "remotes::install_github('xihaoli/MetaSTAAR')"
+RUN R -e "remotes::install_github('li-lab-genetics/MetaSTAARlite')"
 
 ## Copy env file. Must be chowned to the micromamba user
 COPY --chown=micromamba:micromamba R.yaml /tmp/env.yaml
