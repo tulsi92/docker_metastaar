@@ -1,7 +1,7 @@
 # Newer version of micromamba with lots of features
 FROM mambaorg/micromamba:1.5.8
 ## Use base image with R installed. Adjust the R version as needed
-# FROM rocker/r-ver:4.2.2
+FROM rocker/r-ver:4.2.2
 
 ## Change user to root to make root directory and chown it to mamba user. Mamba env is not active here
 USER root
