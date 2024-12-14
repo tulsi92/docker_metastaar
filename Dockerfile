@@ -30,9 +30,8 @@ RUN R -e "install.packages('remotes', repos = 'http://cran.rstudio.com')"
 # Install specific R packages from GitHub
 RUN R -e "remotes::install_github('xihaoli/STAAR')"
 RUN R -e "remotes::install_github('xihaoli/STAARpipeline')"
-RUN R -e "remotes::install_github('xihaoli/STAARpipelineSummary')"
 RUN R -e "remotes::install_github('xihaoli/MultiSTAAR')"
+RUN R -e "remotes::install_github('zilinli1988/SCANG')"
+RUN R -e "remotes::install_github('xihaoli/STAARpipelineSummary')"
 RUN R -e "remotes::install_github('xihaoli/MetaSTAAR')"
 RUN R -e "remotes::install_github('li-lab-genetics/MetaSTAARlite')"
-
-#  ERROR: dependencies ‘STAAR’, ‘MultiSTAAR’, ‘STAARpipeline’, ‘SCANG’, ‘SeqArray’, ‘SeqVarTools’, ‘GenomicFeatures’, ‘TxDb.Hsapiens.UCSC.hg38.knownGene’, ‘GMMAT’ are not available for package ‘STAARpipelineSummary’
